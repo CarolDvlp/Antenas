@@ -4,6 +4,12 @@ angular.module("HomeApp", ["ngRoute"]).config(["$routeProvider", function($route
 		controller: "AntennaController",
 		controllerAs: "vm",
 		templateUrl: "assets/js/home/antenna/templates/antennas.html"
+	})
+	.when("/login",
+	{
+		controller: "/LoginController",
+		controller as: "vm",
+		templateUrl: "assets/js/login/templates/login.html"
 	});
 
 }]);
