@@ -54,3 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['/antenas'] = 'home';
+
+//REST congiguration
+$route['login']['POST'] = 'login/doLogin';
+
