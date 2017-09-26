@@ -5,8 +5,12 @@ class Login extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		if($this->session->userdata('logged_in')){
+			redirect('/home');
+		}
 		$this->load->model("UserModel");
 	}
+
 
 	public function index(){
 		$this->load->view('login');
@@ -32,7 +36,7 @@ class Login extends CI_Controller {
 			}else{
 				$this->output->set_status_header(404);
 				$this->output->set_content_type('application/json', 'utf-8');
-				echo json_encode(array('message' => "Datos incorrectos"));
+				echo json_encode(array('message' => "Los datos son incorrectos. Intenta otra vez"));
 			}
 		}
 		

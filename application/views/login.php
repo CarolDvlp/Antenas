@@ -13,10 +13,10 @@
 			  <div class="hero-body">
 			    <div class="container">
 			      <h1 class="title">
-			        Primary title
+			        Antennas
 			      </h1>
 			      <h2 class="subtitle">
-			        Primary subtitle
+			        Gestión de antenas y enlaces
 			      </h2>
 			    </div>
 			  </div>
@@ -31,7 +31,16 @@
 
 				  <div class="columns">
 				  	<div class="column is-6 is-offset-3">
-				  		<p>{{scope.errorMessage}}</p>
+				  	<!--MENSAJE CREDENCIALES INCORRECTAS -->
+						<div class="notification is-danger" ng-show="scope.showErrorMessage">
+						 	<center><p>{{scope.errorMessage}}</p></center>
+						 </div>
+					<!--FIN MENSAJE CREDENCIALES INCORRECTAS -->
+					<!--MENSAJE CASILLAS VACÍAS -->
+						<div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
+						 	<center><p>{{scope.fillTheFieldsMessage}}</p></center>
+						 </div>
+					<!--FIN MENSAJE CASILLAS VACIAS -->
 				    	<div class="field">
 				         	<p class="control has-icons-left has-icons-right">
 				         		<input class="input" type="text" placeholder="Usuario" ng-model="scope.loginDataUsername">

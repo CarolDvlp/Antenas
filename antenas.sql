@@ -1,6 +1,30 @@
 drop database IF EXISTS antenas;
-create database IF NOT EXISTS antenas CHARACTER SET ISO-8859-1;
+create database IF NOT EXISTS antenas;
 use antenas;
+
+CREATE TABLE IF NOT EXISTS Sector (
+  idSector INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nombreSector VARCHAR(50) NOT NULL,
+  CONSTRAINT pk_sector PRIMARY KEY (idSector)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Perfil (
+  idPerfil INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  perfil VARCHAR(50) NOT NULL,
+  CONSTRAINT pk_perfil PRIMARY KEY(idPerfil)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS Usuario (
+  idUsuario INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+  clave VARCHAR(50) NOT NUll,
+  idPerfil INT UNSIGNED NOT NULL,
+  CONSTRAINT pk_usuario PRIMARY KEY(idUsuario),
+  CONSTRAINT fk_usuarioPerfil FOREIGN KEY (idPerfil) REFERENCES Perfil(idPerfil)
+) ENGINE = InnoDB;
+
 
 CREATE TABLE IF NOT EXISTS Antena (
   idAntena INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -12,38 +36,12 @@ CREATE TABLE IF NOT EXISTS Antena (
   ip VARCHAR(50) NOT NULL,
   mac VARCHAR(50) NOT NULL,
   ganancia VARCHAR(50) NOT NULL,
-  ubicación VARCHAR(50) NOT NULL,
   canal VARCHAR(50) NOT NULL,
-  sector VARCHAR(50) NOT NUll
-  CONSTRAINT pk_antena PRIMARY KEY(idAntena)
-) ENGINE = InnoDB;
-
-
-CREATE TABLE IF NOT EXISTS Sector (
-  idSector INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombreSector VARCHAR(50) NOT NULL,
-  CONSTRAINT pk_sector PRIMARY KEY (idSector),
-  CONSTRAINT fk_sector FOREIGN KEY (idAntena) REFERENCES Antena(idAntena)
-) ENGINE = InnoDB;
-
-
-CREATE TABLE IF NOT EXISTS Ubicación (
-  latitud VARCHAR (20) NOT NULL AUTO_INCREMENT,
-  longitud VARCHAR (20) NOT NULL AUTO_INCREMENT,
-  CONSTRAINT pk_latitud PRIMARY KEY(latitud, longitud)
-) ENGINE = InnoDB;
-
-
-CREATE TABLE IF NOT EXISTS Usuario (
-  idUsuario INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(50) NOT NULL,
-  perfil VARCHAR(50) NOT NULL,
-  clave VARCHAR(50) NOT NUll,
-  CONSTRAINT pk_usuario PRIMARY KEY(idUsuario)
-) ENGINE = InnoDB;
-
-CREATE TABLE IF NOT EXISTS Perfil (
-  idPerfil INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  perfil VARCHAR(50) NOT NULL,
-  CONSTRAINT pk_perfil PRIMARY KEY(idPerfil)
+  latitud VARCHAR(100) NOT NULL,
+  longitud VARCHAR(100) NOT NULL,
+  idSector INT UNSIGNED NOT NUll,
+  idUsuario INT UNSIGNED NOT NUll,
+  CONSTRAINT pk_antena PRIMARY KEY(idAntena),
+  CONSTRAINT fk_sectorAntena FOREIGN KEY (idSector) REFERENCES Sector(idSector),
+  CONSTRAINT fk_usuarioAntena FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 ) ENGINE = InnoDB;
