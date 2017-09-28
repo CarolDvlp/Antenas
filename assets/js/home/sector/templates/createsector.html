@@ -1,0 +1,21 @@
+ <section class="section">
+ 	<div class="container">
+ 		<!--MENSAJE CASILLAS VACÍAS -->
+				<div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
+				 	<center><p>{{scope.fillTheFieldsMessage}}</p></center>
+				</div>
+				<!--FIN MENSAJE CASILLAS VACIAS -->
+	 	<div class="columns">
+		    <div class="column is-5">
+		        <input class="input" type="text" placeholder="Nombre sector" ng-model="scope.sector">
+		    </div>
+	    </div>
+	    <div class="field">
+        	<p class="control">
+        		<button class="button is-primary" ng-click="scope.doCreateSector()">
+           			Guardar nuevo sector
+        		</button>
+       		</p>
+     	</div>   
+ 	</div>
+ </section>

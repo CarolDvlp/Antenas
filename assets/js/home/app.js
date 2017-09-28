@@ -4,6 +4,16 @@ angular.module("HomeApp", ["ngRoute"]).config(["$routeProvider", function($route
 		controller: "AntennaController",
 		controllerAs: "vm",
 		templateUrl: "../assets/js/home/antenna/templates/antennas.html"
+	})
+	.when("/createantenna", {
+		controller: "CreateAntennaController",
+		controllerAs: "scope",
+		templateUrl: "../assets/js/home/antenna/templates/createantenna.html"
+	})
+	.when("/createsector", {
+		controller: "CreateSectorController",
+		controllerAs: "scope",
+		templateUrl:"../assets/js/home/sector/templates/createsector.html"
 	});
-
+	
 }]);
