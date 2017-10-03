@@ -6,6 +6,7 @@ angular.module("LoginApp").controller("LoginController", ["$http", function($htt
 	scope.fillTheFieldsMessage = "";
 	scope.showErrorMessage = false;
 	scope.showEmptyFieldsMessage = false;
+	scope.sendedData = false;
 
 	scope.doLogin = function(){
 		if (scope.loginDataUsername == "" || scope.loginDataPass == ""){
@@ -13,6 +14,7 @@ angular.module("LoginApp").controller("LoginController", ["$http", function($htt
 			scope.fillTheFieldsMessage = "Debe llenar los campos requeridos";
 		}
 		else{
+			scope.sendedData = true;
 			scope.showEmptyFieldsMessage = false;
 			var dataObject = {
 				username: scope.loginDataUsername,
@@ -28,6 +30,7 @@ angular.module("LoginApp").controller("LoginController", ["$http", function($htt
 				scope.showErrorMessage = true;
 				scope.loginDataUsername = "";
 				scope.loginDataPass = "";
+				scope.sendedData = false;
 			});
 		}
 	};	

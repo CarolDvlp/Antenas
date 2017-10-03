@@ -7,15 +7,35 @@
             <center><p>{{scope.fillTheFieldsMessage}}</p></center>
           </div>
         <!--FIN MENSAJE CASILLAS VACIAS -->
-
+    <form name="createAntennaForm" ng-submit="scope.sendAntennaForm(createAntennaForm)">
       <div class="columns">
         <div class="column is-5">
-          <input class="input" type="text" placeholder="Nombre" style="margin-bottom: 20px;" ng-model="scope.nombre">
-          <input class="input" type="text" placeholder="Clave" style="margin-bottom: 20px;" ng-model="scope.clave">
-          <input class="input" type="text" placeholder="SSID" style="margin-bottom: 20px;" ng-model="scope.ssid">
-          <input class="input" type="text" placeholder="Marca" style="margin-bottom: 20px;" ng-model="scope.marca">
-          <input class="input" type="text" placeholder="Modelo" style="margin-bottom: 20px;" ng-model="scope.modelo">
-          <input class="input" type="text" placeholder="IP" style="margin-bottom: 20px;" ng-model="scope.ip"> 
+          <input 
+            name="name"
+            ng-model="scope.antenna.name"
+            ng-required="true"
+            class="input" 
+            type="text" 
+            placeholder="Nombre"
+            style="margin-bottom: 20px;">
+          <input 
+            name="pass"
+            ng-model="scope.antenna.pass"
+            ng-required="true"
+            class="input" 
+            type="text" 
+            placeholder="Clave" 
+            style="margin-bottom: 20px;" >
+          <input 
+            name="ssid"
+            ng-model="scope.ssid"
+            class="input" 
+            type="text" 
+            placeholder="SSID" 
+            style="margin-bottom: 20px;" >
+          <input name="" class="input" type="text" placeholder="Marca" style="margin-bottom: 20px;" ng-model="scope.marca">
+          <input name="" class="input" type="text" placeholder="Modelo" style="margin-bottom: 20px;" ng-model="scope.modelo">
+          <input name="" class="input" type="text" placeholder="IP" style="margin-bottom: 20px;" ng-model="scope.ip"> 
         </div>
 
         <div class="column is-5">
@@ -35,13 +55,18 @@
         </div>
       </div>
 
-      <div class="field">
+        <div class="field">
         <p class="control">
-          <button class="button is-primary" ng-click="scope.doCreateAntena()">
+          <button class="button is-primary" ng-submit=""sendAntennaForm>
             Guardar nueva antena
           </button>
         </p>
-      </div>   
+      </div> 
+
+    </form>
+   
+
+      
 
     </div>
   </section>

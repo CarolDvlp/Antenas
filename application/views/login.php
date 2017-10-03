@@ -57,7 +57,7 @@
 			      	</div>
 			      	<div class="field">
 			      		<p class="control">
-			        		<button class="button is-primary" ng-click="scope.doLogin()">
+			        		<button ng-class="scope.sendedData ? 'is-loading' : ''" class="button is-primary" ng-click="scope.doLogin()">
 			              	Iniciar sesión
 			           		</button>
 			        	</p>

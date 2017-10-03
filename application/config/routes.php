@@ -57,5 +57,5 @@ $route['/antenas'] = 'home';
 
 //REST congiguration
 $route['login']['POST'] = 'login/doLogin';
-$route['createantena']['POST'] = 'createantena/doCreateAntenna';
-$route['createsector']['POST'] = 'createsector/doCreateSector';
+$route['antena']['POST'] = 'antena/doCreateAntenna';
+$route['sector']['POST'] = 'sector/doCreateSector';

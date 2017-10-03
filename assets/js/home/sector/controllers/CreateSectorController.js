@@ -12,7 +12,7 @@ angular.module("HomeApp").controller("CreateSectorController", ["$http", functio
 			var dataObject = {
 				sector: scope.sector
 			}
-			$http.post('http://localhost/antenas/index.php/createsector', dataObject).then(function(response){
+			$http.post('http://localhost/antenas/index.php/sector', dataObject).then(function(response){
 				//exito
 			}, function(response){
 				//fracaso

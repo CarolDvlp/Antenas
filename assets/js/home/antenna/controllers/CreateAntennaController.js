@@ -1,7 +1,7 @@
 angular.module("HomeApp").controller("CreateAntennaController", ["$http", function($http){
 	var scope = this;
 	
-	scope.nombre = "";
+	/*scope.nombre = "";
 	scope.clave = "";
 	scope.ssid = "";
 	scope.marca = "";
@@ -10,12 +10,16 @@ angular.module("HomeApp").controller("CreateAntennaController", ["$http", functi
 	scope.ganancia= "";
 	scope.canal = "";
 	scope.latitud = "";
-	scope.longitud = "";
+	scope.longitud = "";*/
 
 	scope.fillTheFieldsMessage = "";
 	scope.showEmptyFieldsMessage = false;
 
-	scope.doCreateAntena = function(){
+	scope.sendAntennaForm = function(){
+		alert("Send antenna form");
+	};
+
+	/*scope.doCreateAntena = function(){
 		if(scope.nombre == "" || scope.clave == "" || scope.ssid == "" ||
 		   scope.marca == "" || scope.modelo == "" || scope.mac == "" ||
 		   scope.ganancia == "" || scope.canal == "" || scope.latitud == "" ||
@@ -45,6 +49,6 @@ angular.module("HomeApp").controller("CreateAntennaController", ["$http", functi
 		}
 
 			
-	};	
+	};*/	
 
 }]);

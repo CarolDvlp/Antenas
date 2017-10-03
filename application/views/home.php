@@ -44,6 +44,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/AntennaController.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/CreateAntennaController.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/sector/controllers/CreateSectorController.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/EditAntennaController.js"></script>
 
 </body>
 </html>

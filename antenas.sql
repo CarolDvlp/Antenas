@@ -1,47 +1,47 @@
-drop database IF EXISTS antenas;
-create database IF NOT EXISTS antenas;
-use antenas;
+drop database IF EXISTS antennas;
+create database IF NOT EXISTS antennas;
+use antennas;
 
 CREATE TABLE IF NOT EXISTS Sector (
-  idSector INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombreSector VARCHAR(50) NOT NULL,
-  CONSTRAINT pk_sector PRIMARY KEY (idSector)
+  sectorId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  sector VARCHAR(50) NOT NULL,
+  CONSTRAINT pk_sector PRIMARY KEY (sectorId)
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS Perfil (
-  idPerfil INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  perfil VARCHAR(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS Profile(
+  profileId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  profile VARCHAR(50) NOT NULL,
   CONSTRAINT pk_perfil PRIMARY KEY(idPerfil)
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS Usuario (
-  idUsuario INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(50) NOT NULL,
-  clave VARCHAR(50) NOT NUll,
-  idPerfil INT UNSIGNED NOT NULL,
-  CONSTRAINT pk_usuario PRIMARY KEY(idUsuario),
-  CONSTRAINT fk_usuarioPerfil FOREIGN KEY (idPerfil) REFERENCES Perfil(idPerfil)
+CREATE TABLE IF NOT EXISTS User (
+  userId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  userName VARCHAR(50) NOT NULL,
+  userPass VARCHAR(50) NOT NUll,
+  profileId INT UNSIGNED NOT NULL,
+  CONSTRAINT pk_user PRIMARY KEY(userId),
+  CONSTRAINT fk_userProfile FOREIGN KEY (ProfileId) REFERENCES Profile(profileId)
 ) ENGINE = InnoDB;
 
 
-CREATE TABLE IF NOT EXISTS Antena (
-  idAntena INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(50) NOT NULL,
-  claveAntena VARCHAR(50) NOT NULL,
+CREATE TABLE IF NOT EXISTS Antenna (
+  antennaId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  pass VARCHAR(50) NOT NULL,
   ssid VARCHAR(50) NOT NULL,
-  marca VARCHAR(50) NOT NULL,
-  modelo VARCHAR(50) NOT NULL,
+  trademark VARCHAR(50) NOT NULL,
+  model VARCHAR(50) NOT NULL,
   ip VARCHAR(50) NOT NULL,
   mac VARCHAR(50) NOT NULL,
-  ganancia VARCHAR(50) NOT NULL,
-  canal VARCHAR(50) NOT NULL,
-  latitud VARCHAR(100) NOT NULL,
-  longitud VARCHAR(100) NOT NULL,
-  idSector INT UNSIGNED NOT NUll,
-  idUsuario INT UNSIGNED NOT NUll,
-  CONSTRAINT pk_antena PRIMARY KEY(idAntena),
-  CONSTRAINT fk_sectorAntena FOREIGN KEY (idSector) REFERENCES Sector(idSector),
-  CONSTRAINT fk_usuarioAntena FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+  gain VARCHAR(50) NOT NULL,
+  channel VARCHAR(50) NOT NULL,
+  latitude VARCHAR(100) NOT NULL,
+  longitude VARCHAR(100) NOT NULL,
+  sectorId INT UNSIGNED NOT NUll,
+  userId INT UNSIGNED NOT NUll,
+  CONSTRAINT pk_antenna PRIMARY KEY(antennaId),
+  CONSTRAINT fk_sectorAntenna FOREIGN KEY (sectorId) REFERENCES Sector(sectorId),
+  CONSTRAINT fk_userAntenna FOREIGN KEY (userId) REFERENCES User(userId)
 ) ENGINE = InnoDB;
