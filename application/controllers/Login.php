@@ -26,7 +26,7 @@ class Login extends CI_Controller {
 			$result = $this->UserModel->checkUser($userData);
 			if($result['exists']){
 				$user_session = array(
-					'name'=> $result['name'],
+					'userName'=> $result['userName'],
 					'logged_in' => true
 				);
 				$this->session->set_userdata($user_session);

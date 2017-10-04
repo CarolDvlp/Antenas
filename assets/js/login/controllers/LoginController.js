@@ -17,12 +17,12 @@ angular.module("LoginApp").controller("LoginController", ["$http", function($htt
 			scope.sendedData = true;
 			scope.showEmptyFieldsMessage = false;
 			var dataObject = {
-				username: scope.loginDataUsername,
-				pass: scope.loginDataPass
+				userName: scope.loginDataUsername,
+				userPass: scope.loginDataPass
 			};
 			
 			$http.post('http://localhost/antenas/index.php/login', dataObject).then(function(response){
-				//Obtengo la url del home para redireccionar. Esto siempre y cuando las creadenciales sean correactas.
+				//Obtengo la url del home para redireccionar. Esto siempre y cuando las creadenciales sean correctas.
 				window.location.href = response.data.url;
 			}, function(response){
 				//Muestro el mensaje de error.

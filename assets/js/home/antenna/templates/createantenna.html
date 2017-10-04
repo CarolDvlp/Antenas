@@ -25,25 +25,74 @@
             class="input" 
             type="text" 
             placeholder="Clave" 
-            style="margin-bottom: 20px;" >
+            style="margin-bottom: 20px;">
           <input 
             name="ssid"
-            ng-model="scope.ssid"
+            ng-model="scope.antenna.ssid"
             class="input" 
             type="text" 
             placeholder="SSID" 
-            style="margin-bottom: 20px;" >
-          <input name="" class="input" type="text" placeholder="Marca" style="margin-bottom: 20px;" ng-model="scope.marca">
-          <input name="" class="input" type="text" placeholder="Modelo" style="margin-bottom: 20px;" ng-model="scope.modelo">
-          <input name="" class="input" type="text" placeholder="IP" style="margin-bottom: 20px;" ng-model="scope.ip"> 
+            style="margin-bottom: 20px;">
+          <input 
+            name="trademark"
+            ng-model="scope.antenna.marca" 
+            class="input" 
+            type="text" 
+            placeholder="Marca" 
+            style="margin-bottom: 20px;">
+          <input 
+            name="model"
+            ng-model="scope.antenna.model" 
+            class="input" 
+            type="text" 
+            placeholder="Modelo" 
+            style="margin-bottom: 20px;">
+          <input 
+            name="ip"
+            ng-model="scope.antenna.ip" 
+            class="input" 
+            type="text" 
+            placeholder="IP" 
+            style="margin-bottom: 20px;"> 
         </div>
 
         <div class="column is-5">
-          <input class="input" type="text" placeholder="Mac" style="margin-bottom: 20px;" ng-model="scope.mac">
-          <input class="input" type="text" placeholder="Ganancia" style="margin-bottom: 20px;" ng-model="scope.ganancia">
-          <input class="input" type="text" placeholder="Canal" style="margin-bottom: 20px;" ng-model="scope.canal">
-          <input class="input" type="text" placeholder="Latitud" style="margin-bottom: 20px;" ng-model="scope.latitud">
-          <input class="input" type="text" placeholder="Longitud" style="margin-bottom: 20px;" ng-model="scope.longitud">
+          <input 
+            name="mac" 
+            ng-model="scope.antenna.mac"
+            class="input" 
+            type="text" 
+            placeholder="Mac" 
+            style="margin-bottom: 20px;">
+          <input 
+            name="gain"
+            ng-model="scope.antenna.gain"
+            class="input" 
+            type="text" 
+            placeholder="Ganancia" 
+            style="margin-bottom: 20px;">
+          <input 
+            name="channel" 
+            ng-model="scope.antenna.canal"
+            class="input" 
+            type="text" 
+            placeholder="Canal" 
+            style="margin-bottom: 20px;">
+          <input
+            name="latitude"
+            ng-model="scope.antenna.latitude"
+            class="input" 
+            type="text" 
+            placeholder="Latitud" 
+            style="margin-bottom: 20px;">
+          <input
+            name="longitude"
+            ng-model="scope.antenna.longitude"
+            class="input" 
+            type="text" 
+            placeholder="Longitud" 
+            style="margin-bottom: 20px;">
+            
           <div class="select" style="margin-bottom: 50px;">
             <select>
               <option>Sector 0</option>
@@ -57,7 +106,7 @@
 
         <div class="field">
         <p class="control">
-          <button class="button is-primary" ng-submit=""sendAntennaForm>
+          <button class="button is-primary" ng-submit="sendAntennaForm">
             Guardar nueva antena
           </button>
         </p>

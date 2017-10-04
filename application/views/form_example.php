@@ -45,6 +45,7 @@
 				          		</span>
 				          	</p>
 				      	</div>
+				      	
 				      	<p class="help" ng-show="createUserForm.name.$error.required && createUserForm.name.$touched">
 				      		You have to complete this field
 				      	</p>
