@@ -1,13 +1,26 @@
  <p class="subtitle">Crea un nuevo <strong>Sector</strong>!</p>
  <section class="section">
  	<div class="container">
- 		<!--MENSAJE CASILLAS VACÍAS -->
-				<div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
-				 	<center><p>{{scope.fillTheFieldsMessage}}</p></center>
-				</div>
-				<!--FIN MENSAJE CASILLAS VACIAS -->
+
 	 	<div class="columns">
 		    <div class="column is-5">
+
+		    <!--MENSAJE CASILLAS VACÍAS -->
+			<div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
+			 	<center><p>{{scope.fillTheFieldsMessage}}</p></center>
+			</div>
+			<!--FIN MENSAJE CASILLAS VACIAS -->
+			<!--MENSAJE DE ERROR -->
+			<div class="notification is-warning" ng-show="scope.showErrorMessage">
+			 	<center><p>{{scope.errorMessage}}</p></center>
+			</div>
+			<!--FIN MENSAJE DE ERROR -->
+			<!--MENSAJE DE EXITO -->
+			<div class="notification is-warning" ng-show="scope.showSuccessMessage">
+			 	<center><p>{{scope.successMessage}}</p></center>
+			</div>
+			<!--FIN MENSAJE DE EXITO -->
+
 		        <input class="input" type="text" placeholder="Nombre sector" ng-model="scope.sector">
 		    </div>
 	    </div>
@@ -17,6 +30,8 @@
            			Guardar nuevo sector
         		</button>
        		</p>
-     	</div>   
+     	</div>  
+
  	</div>
- </section>
+</section>
+

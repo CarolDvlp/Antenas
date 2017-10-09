@@ -5,14 +5,16 @@ use antennas;
 CREATE TABLE IF NOT EXISTS Sector (
   sectorId INT UNSIGNED NOT NULL AUTO_INCREMENT,
   sector VARCHAR(50) NOT NULL,
-  CONSTRAINT pk_sector PRIMARY KEY (sectorId)
+  CONSTRAINT pk_sector PRIMARY KEY (sectorId),
+  CONSTRAINT u_sector UNIQUE (sector)
 ) ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS Profile(
   profileId INT UNSIGNED NOT NULL AUTO_INCREMENT,
   profile VARCHAR(50) NOT NULL,
-  CONSTRAINT pk_perfil PRIMARY KEY(profileId)
+  CONSTRAINT pk_perfil PRIMARY KEY(profileId),
+  CONSTRAINT u_profile UNIQUE (profile)
 ) ENGINE = InnoDB;
 
 
@@ -45,3 +47,7 @@ CREATE TABLE IF NOT EXISTS Antenna (
   CONSTRAINT fk_sectorAntenna FOREIGN KEY (sectorId) REFERENCES Sector(sectorId),
   CONSTRAINT fk_userAntenna FOREIGN KEY (userId) REFERENCES User(userId)
 ) ENGINE = InnoDB;
+
+insert into Profile(profile) values('admin');
+
+insert into User (userName, userPass, profileId) values('carol', '1234', 1);

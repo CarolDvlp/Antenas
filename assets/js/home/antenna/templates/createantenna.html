@@ -2,11 +2,7 @@
     <div class="container">
       <p class="subtitle">Crea una nueva <strong>Antena</strong>!</p>
 
-      <!--MENSAJE CASILLAS VACÍAS -->
-          <div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
-            <center><p>{{scope.fillTheFieldsMessage}}</p></center>
-          </div>
-        <!--FIN MENSAJE CASILLAS VACIAS -->
+  
     <form name="createAntennaForm" ng-submit="scope.sendAntennaForm(createAntennaForm)">
       <div class="columns">
         <div class="column is-5">
@@ -29,6 +25,7 @@
           <input 
             name="ssid"
             ng-model="scope.antenna.ssid"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="SSID" 
@@ -36,6 +33,7 @@
           <input 
             name="trademark"
             ng-model="scope.antenna.marca" 
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Marca" 
@@ -43,6 +41,7 @@
           <input 
             name="model"
             ng-model="scope.antenna.model" 
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Modelo" 
@@ -50,6 +49,7 @@
           <input 
             name="ip"
             ng-model="scope.antenna.ip" 
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="IP" 
@@ -60,6 +60,7 @@
           <input 
             name="mac" 
             ng-model="scope.antenna.mac"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Mac" 
@@ -67,6 +68,7 @@
           <input 
             name="gain"
             ng-model="scope.antenna.gain"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Ganancia" 
@@ -74,6 +76,7 @@
           <input 
             name="channel" 
             ng-model="scope.antenna.canal"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Canal" 
@@ -81,6 +84,7 @@
           <input
             name="latitude"
             ng-model="scope.antenna.latitude"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Latitud" 
@@ -88,6 +92,7 @@
           <input
             name="longitude"
             ng-model="scope.antenna.longitude"
+            ng-required="true"
             class="input" 
             type="text" 
             placeholder="Longitud" 
@@ -113,10 +118,7 @@
       </div> 
 
     </form>
-   
-
-      
-
-    </div>
-  </section>
+     
+  </div>
+</section>
   

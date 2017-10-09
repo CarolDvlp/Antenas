@@ -3,19 +3,28 @@ angular.module("HomeApp").controller("CreateSectorController", ["$http", functio
 	scope.sector = "";
 	scope.fillTheFieldsMessage = "";
 	scope.showEmptyFieldsMessage = false;
+	scope.errorMessage = "";
+	scope.showErrorMessage = false;
+	scope.successMessage = "";
+	scope.showSuccessMessage = false;
 
 	scope.doCreateSector = function(){
-		if(scope.sector == ""){
+		if(scope.sector == null){
 			scope.showEmptyFieldsMessage = true;
 			scope.fillTheFieldsMessage = "Debe ingresar el sector";
+			scope.showEmptyFieldsMessage = false;
 		}else{
 			var dataObject = {
 				sector: scope.sector
 			}
 			$http.post('http://localhost/antenas/index.php/sector', dataObject).then(function(response){
-				//exito
+				scope.successMessage = response.data.successMessage;
+				scope.showSuccessMessage = true;
+				scope.sector = "";
 			}, function(response){
-				//fracaso
+				scope.errorMessage = response.data.errorMessage;
+				scope.showErrorMessage = true;
+
 			});
 		}
 	}

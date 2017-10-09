@@ -14,17 +14,18 @@
 	  			<div class="column is-2">
 					<aside class="menu">
 					  	<p class="menu-label">
-					    	Gestión antenas
+					    	Antenas
 					 	</p>
 						<ul class="menu-list">
-						    <li><a href="#/!" class="is-active">Antenas</a></li>
+						    <li><a href="#/!" class="is-active">Mis antenas</a></li>
+						    <li><a href="#!createantenna">Crear antena</a></li>
 						</ul>
 		     		    <p class="menu-label">
-					    	Crear
+					    	Sector
 					    </p>
 					    <ul class="menu-list">
-						    <li><a href="#!createantenna">Antena</a></li>
-						    <li><a href="#!createsector">Sector</a></li>
+						    <li><a href="#!listsector">Sectores</a></li>
+						    <li><a href="#!createsector">Crear sector</a></li>
 					    </ul>
 					</aside>	
 				</div>
@@ -43,8 +44,10 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/HomeController.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/AntennaController.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/CreateAntennaController.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>assets/js/home/sector/controllers/CreateSectorController.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/home/antenna/controllers/EditAntennaController.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/home/sector/controllers/CreateSectorController.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/home/sector/controllers/ListSectorController.js"></script>
+
 
 </body>
 </html>

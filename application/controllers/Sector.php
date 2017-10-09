@@ -9,6 +9,7 @@ class Sector extends CI_Controller {
 			redirect('/login');
 		}
 		$this->load->model("SectorModel");
+		$this->load->library("response");
 	}
 
 	public function doCreateSector(){
@@ -25,8 +26,16 @@ class Sector extends CI_Controller {
 
 		$sectorData = json_decode(file_get_contents("php://input"));
 		if(isset($sectorData)){
-			$this->SectorModel->insertSector($sectorData);
+			if($this->SectorModel->insertSector($sectorData)){
+				$this->response->doJson(200, array('successMessage' => "El nuevo sector ha sido guardado."));
+			}else{
+				$this->response->doJson(400, array('errorMessage' => "Ocurrió un problema. Inténtalo de nuevo.")); 
+			}
 		}
+	}
+
+	public function doListSectors(){
+		$this->response->doJson(200, $this->SectorModel->doListSectors());
 	}
 
 }

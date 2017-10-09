@@ -59,3 +59,4 @@ $route['/antenas'] = 'home';
 $route['login']['POST'] = 'login/doLogin';
 $route['antena']['POST'] = 'antena/doCreateAntenna';
 $route['sector']['POST'] = 'sector/doCreateSector';
+$route['sector']['GET'] = 'sector/doListSectors';

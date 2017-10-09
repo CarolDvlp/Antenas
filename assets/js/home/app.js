@@ -19,6 +19,10 @@ angular.module("HomeApp", ["ngRoute"]).config(["$routeProvider", function($route
 		controller: "CreateSectorController",
 		controllerAs: "scope",
 		templateUrl:"../assets/js/home/sector/templates/createsector.html"
+	})
+	.when("/listsector", {
+		controller: "ListSectorController",
+		controllerAs: "scope",
+		templateUrl:"../assets/js/home/sector/templates/listsector.html"
 	});
-	
 }]);
