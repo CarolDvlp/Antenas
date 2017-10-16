@@ -1,9 +1,12 @@
-<div class="columns">
-	<div class="column">
+<div class="columns is-multiline">
+	<div class="column is-one-third-desktop is-half-tablet is-narrow" ng-repeat="antenna in scope.antennas">
 		<div class="card">
 		  <header class="card-header">
 		    <p class="card-header-title">
-		      Nombre Antena 
+		     Nombre:  {{antenna.name}} <br>
+	         Clave:  {{antenna.pass}} <br>
+	         SSid: {{antenna.ssid}}<br>
+	          
 		    </p>
 		    <a href="#" class="card-header-icon" aria-label="more options">
 		      <span class="icon">
@@ -13,12 +16,17 @@
 		  </header>
 		  <div class="card-content">
 		    <div class="content">
-		      Clave: 123123123 <br>
-		      SSId: asdadasd <br>
-		      Marca: aafdf<br>
-		      Modelo: asfkjhk <br>	
+		    Marca: {{antenna.trademark}}<br>
+	        Modelo: {{antenna.model}}<br>
+	        IP: {{antenna.ip}}<br>
+            Mac: {{antenna.mac}}<br>
+            Ganancia: {{antenna.gain}}<br>
+            Canal: {{antenna.channel}}<br>
+            Latitud: {{antenna.latitude}}<br>
+            Longitug: {{antenna.longitude}}<br>
+            Sector: {{antenna.sectorId}}<br>
 		      <br>
-		      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+		      <!--<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>-->
 		    </div>
 		  </div>
 		  <footer class="card-footer">
@@ -27,119 +35,13 @@
 		  </footer>
 		</div>
 	</div>
-	
-	<div class="column">
-		<div class="card">
-		  <header class="card-header">
-		    <p class="card-header-title">
-		      Nombre Antena 
-		    </p>
-		    <a href="#" class="card-header-icon" aria-label="more options">
-		      <span class="icon">
-		        <i class="fa fa-angle-down" aria-hidden="true"></i>
-		      </span>
-		    </a>
-		  </header>
-		  <div class="card-content">
-		    <div class="content">
-		      Clave: 123123123 <br>
-		      SSId: asdadasd <br>
-		      Marca: aafdf<br>
-		      Modelo: asfkjhk <br>	
-		      <br>
-		      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-		    </div>
-		  </div>
-		  <footer class="card-footer">
-		    <a href="#" class="card-footer-item">Edit</a>
-		    <a href="#" class="card-footer-item">Delete</a>
-		  </footer>
-		</div>
-	</div>
-
 </div>
 
 
-<!--CARDS SIN COLUMNS-->
-
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Nombre Antena 
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
-      Clave: 123123123 <br>
-      SSId: asdadasd <br>
-      Marca: aafdf<br>
-      Modelo: asfkjhk <br>	
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
   </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
+  <button class="modal-close is-large" aria-label="close"></button>
 </div>
-
-<br>
-
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Component
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
-</div>
-
-<br>
-
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Component
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-      <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
-</div>
-

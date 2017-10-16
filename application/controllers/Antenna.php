@@ -9,15 +9,13 @@ class Antenna extends CI_Controller {
 			redirect('/login');
 		}
 		$this->load->model("AntennaModel");
-	}
-
-	public function index(){
-		$this->load->view('home');
+		$this->load->library("response");
 	}
 
 	public function doCreateAntenna(){
 		$antennaData = json_decode(file_get_contents("php://input"));
 		if(isset($antennaData)){
+			$antennaData->userId = $this->session->userdata('userId');
 			if($this->AntennaModel->insertAntenna($antennaData)){
 				$this->output->set_status_header(200);
 				$this->output->set_content_type('application/json', 'utf-8');
@@ -28,6 +26,10 @@ class Antenna extends CI_Controller {
 			}
 		}
 			
+	}
+
+	public function doListAntennas(){
+		$this->response->doJson(200, $this->AntennaModel->doListAntennas());
 	}
 
 }

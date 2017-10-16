@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS Antenna (
   userId INT UNSIGNED NOT NUll,
   CONSTRAINT pk_antenna PRIMARY KEY(antennaId),
   CONSTRAINT fk_sectorAntenna FOREIGN KEY (sectorId) REFERENCES Sector(sectorId),
-  CONSTRAINT fk_userAntenna FOREIGN KEY (userId) REFERENCES User(userId)
+  CONSTRAINT fk_userAntenna FOREIGN KEY (userId) REFERENCES User(userId),
+  CONSTRAINT u_antenna UNIQUE (name)
 ) ENGINE = InnoDB;
 
 insert into Profile(profile) values('admin');

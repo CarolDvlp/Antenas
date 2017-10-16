@@ -1,4 +1,4 @@
-angular.module("LoginApp").controller("LoginController", ["$http", function($http){
+angular.module("LoginApp").controller("LoginController", ["$http", "$timeout", function($http, $timeout){
 	var scope = this;
 	scope.loginDataUsername = "";
 	scope.loginDataPass = "";
@@ -31,11 +31,13 @@ angular.module("LoginApp").controller("LoginController", ["$http", function($htt
 				scope.loginDataUsername = "";
 				scope.loginDataPass = "";
 				scope.sendedData = false;
+
+				$timeout(function(){
+					scope.showErrorMessage = false;
+				}, 3000);
 			});
 		}
 	};	
-
-	
 
 }]);
 

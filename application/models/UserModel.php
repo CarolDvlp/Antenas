@@ -20,6 +20,7 @@ class UserModel extends CI_Model {
 			if ($row->userPass == $userPass) {
 				$return['exists'] = true;
 				$return['userName'] = $row->userName;
+				$return['userId'] = $row->userId;
 			}
 		}
 

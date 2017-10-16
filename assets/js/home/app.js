@@ -2,7 +2,7 @@ angular.module("HomeApp", ["ngRoute"]).config(["$routeProvider", function($route
 
 	$routeProvider.when("/", {
 		controller: "AntennaController",
-		controllerAs: "vm",
+		controllerAs: "scope",
 		templateUrl: "../assets/js/home/antenna/templates/antennas.html"
 	})
 	.when("/createantenna", {
