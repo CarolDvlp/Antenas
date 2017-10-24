@@ -14,4 +14,5 @@ angular.module("HomeApp").controller("AntennaController", ["$http", function($ht
 
 	scope.doListAntennas();
 
+
 }]);

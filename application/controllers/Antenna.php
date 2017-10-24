@@ -17,12 +17,9 @@ class Antenna extends CI_Controller {
 		if(isset($antennaData)){
 			$antennaData->userId = $this->session->userdata('userId');
 			if($this->AntennaModel->insertAntenna($antennaData)){
-				$this->output->set_status_header(200);
-				$this->output->set_content_type('application/json', 'utf-8');
-				echo json_encode(array('successMessage' => "La nueva antena ha sido guardada."));
+				$this->response->doJson(200, array('successMessage' => "La nueva antena ha sido guardada."));
 			}else{
-				$this->output->set_status_header(500);
-				echo json_decode(array('errorMessage' => "La nueva antena no se ha podido guardar"));
+				$this->response->doJson(400, array('errorMessage' => "Ocurrió un problema. Inténtalo de nuevo.")); 
 			}
 		}
 			
@@ -32,4 +29,10 @@ class Antenna extends CI_Controller {
 		$this->response->doJson(200, $this->AntennaModel->doListAntennas());
 	}
 
+	public function doDeleteAntennas(){
+		$antennaId = json_decode(file_get_contents("php://input"));
+		if(isset($antennaId)){
+			$this->AntennaModel->doDeleteAntennas($antennaId);
+		}
+	}
 }

@@ -1,240 +1,229 @@
-  <section class="section">
+<section class="section">
     <div class="container">
-      <p class="subtitle">Crea una nueva <strong>Antena</strong>!</p>
+        <p class="subtitle">Crea una nueva <strong>Antena</strong>!</p>
 
-    <form name="createAntennaForm" ng-submit="scope.sendAntennaForm(createAntennaForm)" novalidate>
-      <div class="columns">
+        <form name="createAntennaForm" ng-submit="scope.sendAntennaForm(createAntennaForm)" novalidate>
 
-      <!--MENSAJE CASILLAS VACÍAS -->
-      <div class="notification is-warning" ng-show="scope.showEmptyFieldsMessage">
-        <center><p>{{scope.fillTheFieldsMessage}}</p></center>
-      </div>
-      <!--FIN MENSAJE CASILLAS VACIAS -->
-      <!--MENSAJE DE ERROR -->
-      <div class="notification is-warning" ng-show="scope.showErrorMessage">
-        <center><p>{{scope.errorMessage}}</p></center>
-      </div>
-      <!--FIN MENSAJE DE ERROR -->
-      <!--MENSAJE DE EXITO -->
-      <div class="notification is-warning" ng-show="scope.showSuccessMessage">
-        <center><p>{{scope.successMessage}}</p></center>
-      </div>
-      <!--FIN MENSAJE DE EXITO -->
+            <div class="columns">
+                <div class="column is-5">
+                     <!--MENSAJE DE ERROR -->
+                    <div class="notification is-error" ng-show="scope.showErrorMessagge">
+                        <center><p>{{scope.errorMessage}}</p></center>
+                    </div>
+                    <!--FIN MENSAJE DE ERROR -->
+                    <!--MENSAJE DE EXITO -->
+                    <div class="notification is-warning" ng-show="scope.showSuccessMessagge">
+                        <center><p>{{scope.successMessage}}</p></center>
+                    </div>
+                    <!--FIN MENSAJE DE EXITO -->
+                </div>
+            </div>
 
-        <div class="column is-5">
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input 
-                name="name"
-                ng-model="scope.antenna.name"
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="Nombre">
+            <div class="columns">
 
-                <span class="icon is-small is-left">
-                  <i class="fa fa-user"></i>
-                </span>
-            </p>
-            <p class="help" ng-show="createAntennaForm.name.$error.required && createAntennaForm.name.$touched">
-              Debes ingresar un nombre para la antena
-            </p>
-          </div>
-          
+                <div class="column is-5">
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input 
-                name="pass"
-                ng-model="scope.antenna.pass"
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="Clave" 
-                >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.pass.$error.required && createAntennaForm.pass.$touched">
-              Debes ingresar una clave para la antena
-            </p>
-          </div>
-          
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input 
-                name="ssid"
-                ng-model="scope.antenna.ssid"
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="SSID" 
-                >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.ssid.$error.required && createAntennaForm.ssid.$touched">
-              Debes ingresar un ssid para la antena
-            </p>
-          </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="name"
+                                ng-model="scope.antenna.name"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Nombre">
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input 
-                name="trademark"
-                ng-model="scope.antenna.trademark" 
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="Marca" 
-                >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.trademark.$error.required && createAntennaForm.trademark.$touched">
-              Debes ingresar la marca de la antena
-            </p>
-          </div>
-          
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input 
-                name="model"
-                ng-model="scope.antenna.model" 
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="Modelo" 
-                >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.model.$error.required && createAntennaForm.model.$touched">
-              Debes ingresar el modelo de la antena
-            </p>
-          </div>
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.name.$error.required && createAntennaForm.name.$touched">
+                            Debes ingresar un nombre para la antena
+                        </p>
+                    </div>
+              
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input 
-                name="ip"
-                ng-model="scope.antenna.ip" 
-                ng-required="true"
-                class="input" 
-                type="text" 
-                placeholder="IP" 
-                >               
-            </p>
-            <p class="help" ng-show="createAntennaForm.ip.$error.required && createAntennaForm.ip.$touched">
-              Debes ingresar una dirección IP para la antena
-            </p>
-          </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                        <input 
+                            name="pass"
+                            ng-model="scope.antenna.pass"
+                            ng-required="true"
+                            class="input" 
+                            type="text" 
+                            placeholder="Clave">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.pass.$error.required && createAntennaForm.pass.$touched">
+                            Debes ingresar una clave para la antena
+                        </p>
+                    </div>
+              
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="ssid"
+                                ng-model="scope.antenna.ssid"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="SSID">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.ssid.$error.required && createAntennaForm.ssid.$touched">
+                            Debes ingresar un ssid para la antena
+                        </p>
+                    </div>
 
-          
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="trademark"
+                                ng-model="scope.antenna.trademark" 
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Marca">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.trademark.$error.required && createAntennaForm.trademark.$touched">
+                            Debes ingresar la marca de la antena
+                        </p>
+                    </div>
+              
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="model"
+                                ng-model="scope.antenna.model" 
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Modelo">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.model.$error.required && createAntennaForm.model.$touched">
+                            Debes ingresar el modelo de la antena
+                        </p>
+                    </div>
 
-        </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="ip"
+                                ng-model="scope.antenna.ip" 
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="IP">               
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.ip.$error.required && createAntennaForm.ip.$touched">
+                            Debes ingresar una dirección IP para la antena
+                        </p>
+                    </div>
 
-        <div class="column is-5">
-          
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input 
-                  name="mac" 
-                  ng-model="scope.antenna.mac"
-                  ng-required="true"
-                  class="input" 
-                  type="text" 
-                  placeholder="Mac" 
-                  >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.ip.$error.required && createAntennaForm.ip.$touched">
-              Debes ingresar la dirección mac de la antena
-            </p>
-          </div>
+                </div>
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input 
-                  name="gain"
-                  ng-model="scope.antenna.gain"
-                  ng-required="true"
-                  class="input" 
-                  type="text" 
-                  placeholder="Ganancia" 
-                  >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.gain.$error.required && createAntennaForm.gain.$touched">
-              Debes ingresar la ganancia de la antena
-            </p>
-          </div>
+                <div class="column is-5">
+              
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="mac" 
+                                ng-model="scope.antenna.mac"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Mac">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.mac.$error.required && createAntennaForm.mac.$touched">
+                            Debes ingresar la dirección mac de la antena
+                        </p>
+                    </div>
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input 
-                  name="channel" 
-                  ng-model="scope.antenna.channel"
-                  ng-required="true"
-                  class="input" 
-                  type="text" 
-                  placeholder="Canal" 
-                  >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.channel.$error.required && createAntennaForm.channel.$touched">
-              Debes ingresar el canal de la antena
-            </p>
-          </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="gain"
+                                ng-model="scope.antenna.gain"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Ganancia">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.gain.$error.required && createAntennaForm.gain.$touched">
+                            Debes ingresar la ganancia de la antena
+                        </p>
+                    </div>
 
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input
-                  name="latitude"
-                  ng-model="scope.antenna.latitude"
-                  ng-required="true"
-                  class="input" 
-                  type="text" 
-                  placeholder="Latitud" 
-                  >    
-            </p>
-            <p class="help" ng-show="createAntennaForm.latitude.$error.required && createAntennaForm.latitude.$touched">
-              Debes ingresar la ubicación de la antena
-            </p>
-          </div>
-          
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                  <input
-                  name="longitude"
-                  ng-model="scope.antenna.longitude"
-                  ng-required="true"
-                  class="input" 
-                  type="text" 
-                  placeholder="Longitud" 
-                  >
-            </p>
-            <p class="help" ng-show="createAntennaForm.longitude.$error.required && createAntennaForm.longitude.$touched">
-              Debes ingresar la ubicación de la antena
-            </p>
-          </div>
-          
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <div class="select" style="margin-bottom: 50px;">
-                  <select ng-model="scope.antenna.sectorId">
-                    <option ng-repeat="sector in scope.sectors" value="{{sector.sectorId}}">{{sector.sector}}</option>
-                  </select>
-                </div>    
-            </p>
-            <p class="help" ng-show="createAntennaForm.longitude.$error.required && createAntennaForm.longitude.$touched">
-              Debes ingresar la ubicación de la antena
-            </p>
-          </div>
-          </div>        
-          
-      </div>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input 
+                                name="channel" 
+                                ng-model="scope.antenna.channel"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Canal">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.channel.$error.required && createAntennaForm.channel.$touched">
+                            Debes ingresar el canal de la antena
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input
+                                name="latitude"
+                                ng-model="scope.antenna.latitude"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Latitud">    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.latitude.$error.required && createAntennaForm.latitude.$touched">
+                            Debes ingresar la ubicación de la antena
+                        </p>
+                    </div>
+              
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input
+                                name="longitude"
+                                ng-model="scope.antenna.longitude"
+                                ng-required="true"
+                                class="input" 
+                                type="text" 
+                                placeholder="Longitud">
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.longitude.$error.required && createAntennaForm.longitude.$touched">
+                            Debes ingresar la ubicación de la antena
+                        </p>
+                    </div>
+              
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <div class="select" style="margin-bottom: 50px;">
+                                <select name="sectorId" ng-model="scope.antenna.sectorId">
+                                    <option ng-repeat="sector in scope.sectors" value="{{sector.sectorId}}">{{sector.sector}}</option>
+                                </select>
+                            </div>    
+                        </p>
+                        <p class="help" ng-show="createAntennaForm.sectorId.$error.required && createAntennaForm.sectorId.$touched">
+                            Debes ingresar la ubicación de la antena
+                        </p>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="columns">
+                <div class="column is-12">
+                    <div class="field">
+                        <p class="control">
+                            <button class="button is-primary">
+                                Guardar nueva antena
+                            </button>
+                        </p>
+                    </div> 
+                </div>
+            </div>            
+        </form>
     </div>
-      {{scope.antenna | json}}
-      <div class="field">
-        <p class="control">
-          <button class="button is-primary" ng-submit="sendAntennaForm">
-            Guardar nueva antena
-          </button>
-        </p>
-      </div> 
-
-  </form>
-     
-  </div>
 </section>
   

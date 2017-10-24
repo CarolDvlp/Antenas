@@ -21,4 +21,8 @@ class AntennaModel extends CI_Model {
 		return $query->result();
 	}
 
+	public function doDeleteAntennas(){
+		$this->db->delete('Antenna', array('antennaId','$antennaId'));
+		
+	}
 }

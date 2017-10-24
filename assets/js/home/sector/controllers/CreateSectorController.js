@@ -1,4 +1,4 @@
-angular.module("HomeApp").controller("CreateSectorController", ["$http", function($http){
+angular.module("HomeApp").controller("CreateSectorController", ["$http", "$timeout", function($http, $timeout){
 	var scope = this;
 	scope.sector = "";
 	scope.fillTheFieldsMessage = "";
@@ -21,6 +21,11 @@ angular.module("HomeApp").controller("CreateSectorController", ["$http", functio
 				scope.successMessage = response.data.successMessage;
 				scope.showSuccessMessage = true;
 				scope.sector = "";
+
+				$timeout(function(){
+					scope.showSuccessMessage = false;
+				}, 3000);
+
 			}, function(response){
 				scope.errorMessage = response.data.errorMessage;
 				scope.showErrorMessage = true;

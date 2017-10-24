@@ -9,6 +9,7 @@ class Login extends CI_Controller {
 			redirect('/home');
 		}
 		$this->load->model("UserModel");
+		$this->load->library("response");
 	}
 
 
@@ -31,13 +32,9 @@ class Login extends CI_Controller {
 					'logged_in' => true
 				);
 				$this->session->set_userdata($user_session);
-				$this->output->set_status_header(200);
-				$this->output->set_content_type('application/json', 'utf-8');
-				echo json_encode(array('url' => base_url() . 'index.php/home'));
+				$this->response->doJson(200, array('url' => base_url() . 'index.php/home'));
 			}else{
-				$this->output->set_status_header(404);
-				$this->output->set_content_type('application/json', 'utf-8');
-				echo json_encode(array('message' => "Los datos son incorrectos. Intenta otra vez"));
+				$this->response->doJson(400, array('message' => "Datos incorrectos"));
 			}
 		}
 		

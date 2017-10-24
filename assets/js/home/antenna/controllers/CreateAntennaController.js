@@ -1,4 +1,4 @@
-angular.module("HomeApp").controller("CreateAntennaController", ["$http", function($http){
+angular.module("HomeApp").controller("CreateAntennaController", ["$http", "$timeout", function($http, $timeout){
 	var scope = this;
 
 	scope.fillTheFieldsMessage = "";
@@ -6,16 +6,24 @@ angular.module("HomeApp").controller("CreateAntennaController", ["$http", functi
 	scope.successMessage = "";
 	scope.showSuccessMessagge = false;
 	scope.errorMessage = "";
-	scope.showErrorMessage = false;
+	scope.showErrorMessagge = false;
 
 	scope.sendAntennaForm = function(createAntennaForm){
 		if(createAntennaForm.$valid){
 			$http.post('http://localhost/antenas/index.php/antenna', scope.antenna).then(function(response){
 				scope.successMessage = response.data.successMessage;
 				scope.showSuccessMessagge = true;
+
+				$timeout(function(){
+					scope.showSuccessMessage = false;
+				}, 3000);
+
+				createAntennaForm.$pristine = true;
+				scope.antenna = {};
+
 			}, function(response){
-				scope.errorMessage = response.data.errorMessage;
-				scope.showErrorMessage = true;
+				scope.errorMessage = "Ha ocurrido un error al intentar crear la antena.";
+				scope.showErrorMessagge = true;
 			});
 
 		}
