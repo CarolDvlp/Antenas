@@ -38,4 +38,15 @@ class Sector extends CI_Controller {
 		$this->response->doJson(200, $this->SectorModel->doListSectors());
 	}
 
+	public function doDeleteSector(){
+		$sectorId = $this->input->get("sectorId");
+		if(isset($sectorId)){
+			if($this->SectorModel->doDeleteSector($sectorId)){
+				$this->response->doJson(200, array('successMessage' => "El sector ha sido eliminado!"));
+			}else{
+				$this->response->doJson(409, array('errorMessage' => "Ocurrió un problema. Inténtalo de nuevo.")); 
+			}
+		}
+	}
+
 }

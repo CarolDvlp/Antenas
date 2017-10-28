@@ -8,13 +8,19 @@
 	         SSid: {{antenna.ssid}}<br>
 	          
 		    </p>
-		    <a href="#" class="card-header-icon" aria-label="more options">
+		    <a 
+		    	href="javascript:void(0)" 
+		    	class="card-header-icon" 
+		    	aria-label="more options"
+		    	ng-click="antenna.hidden = (antenna.hidden == false) ? true : false">
 		      <span class="icon">
-		        <i class="fa fa-angle-down" aria-hidden="true"></i>
+		        <i class="fa" aria-hidden="true"
+		        	ng-class="{'fa-angle-down': (antenna.hidden == true || antenna.hidden == null), 
+		        	'fa-angle-up': (antenna.hidden == false)}"></i>
 		      </span>
 		    </a>
 		  </header>
-		  <div class="card-content">
+		  <div class="card-content" ng-class="{'is-hidden': (antenna.hidden == true || antenna.hidden == null)}">
 		    <div class="content">
 		    Marca: {{antenna.trademark}}<br>
 	        Modelo: {{antenna.model}}<br>
@@ -24,33 +30,32 @@
             Canal: {{antenna.channel}}<br>
             Latitud: {{antenna.latitude}}<br>
             Longitug: {{antenna.longitude}}<br>
-            Sector: {{antenna.sectorId}}<br>
+            Sector: {{antenna.sector}}<br>
 		      <br>
-		      <!--<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>-->
 		    </div>
 		  </div>
 		  <footer class="card-footer">
-		    <a href="#!editantenna" class="card-footer-item">Edit</a>
-		    <a href="#" class="card-footer-item" ng-click="">Delete</a>
+		    <a href="javascript:void(0)" class="card-footer-item">Edit</a>
+		    <a href="javascript:void(0)" class="card-footer-item" ng-click="scope.checkIfYouReallyWantToDelete(antenna)">Delete</a>
 		  </footer>
 		</div>
 	</div>
 </div>
 
 
-<div class="modal">
+<div class="modal" ng-class="{'is-active': (scope.showModal == true)}">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
+      <p class="modal-card-title">Mensaje</p>
+      <button class="delete" aria-label="close" ng-click="scope.showModal = false"></button>
     </header>
     <section class="modal-card-body">
-      bla bla bla bla bla bla blax
+      ¿Estás seguro de eliminar la antena {{scope.toDeleteAntenna.name}}?
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
+      <button class="button is-success" ng-click="scope.doDeleteAntenna()">Borrar antena</button>
+      <button class="button" ng-click="scope.showModal = false">Cancelar</button>
     </footer>
   </div>
 </div>

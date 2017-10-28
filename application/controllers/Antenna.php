@@ -29,10 +29,14 @@ class Antenna extends CI_Controller {
 		$this->response->doJson(200, $this->AntennaModel->doListAntennas());
 	}
 
-	public function doDeleteAntennas(){
-		$antennaId = json_decode(file_get_contents("php://input"));
+	public function doDeleteAntenna(){
+		$antennaId = $this->input->get("antennaId");
 		if(isset($antennaId)){
-			$this->AntennaModel->doDeleteAntennas($antennaId);
+			if($this->AntennaModel->doDeleteAntenna($antennaId)){
+				$this->response->doJson(200, array('successMessage' => "La antena ha sido eliminada!"));
+			}else{
+				$this->response->doJson(409, array('errorMessage' => "Ocurrió un problema. Inténtalo de nuevo.")); 
+			}
 		}
 	}
 }

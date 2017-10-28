@@ -19,4 +19,22 @@ class SectorModel extends CI_Model {
 		return $query->result();
 	}
 
+	public function doDeleteSector($sectorId){
+
+		$returnValue = false;
+		$this->db->where("sectorId", $sectorId);		
+		$this->db->select("ip");
+		$this->db->from("Antenna");
+
+		if($this->db->get()->row() == null){
+			$this->db->where('sectorId', $sectorId );
+			$this->db->delete('Sector');
+			if($this->db->affected_rows() == 1){
+				$returnValue = true;
+			}
+		}
+
+		return $returnValue;
+	}
+
 }

@@ -9,7 +9,7 @@ angular.module("HomeApp").controller("CreateSectorController", ["$http", "$timeo
 	scope.showSuccessMessage = false;
 
 	scope.doCreateSector = function(){
-		if(scope.sector == null){
+		if(scope.sector == ""){
 			scope.showEmptyFieldsMessage = true;
 			scope.fillTheFieldsMessage = "Debe ingresar el sector";
 			scope.showEmptyFieldsMessage = false;

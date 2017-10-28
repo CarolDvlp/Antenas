@@ -17,15 +17,39 @@
 					    	Antenas
 					 	</p>
 						<ul class="menu-list">
-						    <li><a href="#/!" class="is-active">Mis antenas</a></li>
-						    <li><a href="#!createantenna">Crear antena</a></li>
+						    <li>
+						    	<a href="#/!" 
+						    		ng-class="{'is-active': (scope.menu == 'listAntenna' || scope.menu == null)}"
+						    		ng-click="scope.menu = 'listAntenna'">
+						    		Mis antenas
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="#!createantenna"
+						    		ng-class="{'is-active': (scope.menu == 'createAntenna')}"
+						    		ng-click="scope.menu = 'createAntenna'">
+						    		Crear antena
+						    	</a>
+						    </li>
 						</ul>
 		     		    <p class="menu-label">
 					    	Sector
 					    </p>
 					    <ul class="menu-list">
-						    <li><a href="#!listsector">Sectores</a></li>
-						    <li><a href="#!createsector">Crear sector</a></li>
+						    <li>
+						    	<a href="#!listsector"
+						    		ng-class="{'is-active': (scope.menu == 'listSector')}"
+						    		ng-click="scope.menu = 'listSector'">
+						    		Sectores
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="#!createsector"
+						    		ng-class="{'is-active': (scope.menu == 'createSector')}"
+						    		ng-click="scope.menu = 'createSector'">
+						    		Crear sector
+						    	</a>
+						    </li>
 					    </ul>
 					</aside>	
 				</div>

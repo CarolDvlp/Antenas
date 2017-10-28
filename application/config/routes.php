@@ -60,6 +60,8 @@ $route['login']['POST'] = 'login/doLogin';
 
 $route['antenna']['POST'] = 'antenna/doCreateAntenna';
 $route['antenna']['GET'] = 'antenna/doListAntennas';
+$route['antenna']['DELETE'] = 'antenna/doDeleteAntenna';
 
 $route['sector']['POST'] = 'sector/doCreateSector';
 $route['sector']['GET'] = 'sector/doListSectors';
+$route['sector']['DELETE'] = 'sector/doDeleteSector';
